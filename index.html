@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <style>
+ table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.8rem;
+      text-align: center;
+    }
+    th {
+      background-color: #34495e;
+      color: white;
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica arduino,lcd y teclado 4x4</title>
+</head>
+<body>
+    <a href="index.html">visitar primer deber</a><br>
+<a href="segundoDeber.html">visitar segundo deber</a><br>
+    <a href="tercerDeber.html">visitar tercer deber</a><br>
+     <a href="actividad1Thinkercad.html">visitar Acividad 1</a><br>
+     <a href="actividad2Thinkercad.html">visitar Acividad 2</a><br>
+     <a href="actividad3Thinkercad.html">visitar Acividad 3</a><br>
+     <a href="actividad3Thinkercad.html">visitar Acividad 4</a><br>
+
+    <h2 align="center">ARDUINO</h2>
+
+    <h2 align="center">TÍTULO DE LA PRÁCTICA<br>
+"Módulo bluetooth HC-05"</h2>
+ <p>Se realiza una sencilla aplicación con app Inventor para encender 2 focos de 110 voltios controlados con arduino y modulo bluetooth</p>
+<h2>Introducción</h2>
+<p>En esta práctica se implementará una conexión entre una placa Arduino UNO y un módulo 
+            Bluetooth HC-05, con el objetivo de encender y apagar dos LEDs mediante una aplicación 
+            sencilla diseñada en App Inventor. Este proyecto integra conceptos de electrónica básica, 
+            programación en Arduino y desarrollo de aplicaciones móviles, permitiendo comprender de 
+            manera práctica el funcionamiento de la comunicación inalámbrica vía Bluetooth</p>
+ <div class="section">
+        <h2>Objetivo General</h2>
+        <p>
+            Desarrollar un sistema de control inalámbrico que permita encender y apagar dos LEDs conectados 
+            a un Arduino UNO mediante una aplicación móvil creada en App Inventor utilizando el módulo Bluetooth HC-05.</p>
+    </div>
+
+    <div class="section">
+        <h2>Objetivos Específicos</h2>
+       <ul>
+            <li>Conocer el funcionamiento básico del módulo Bluetooth HC-05 y su conexión con Arduino.</li>
+            <li>Diseñar una aplicación móvil sencilla en App Inventor para enviar comandos a Arduino.</li>
+            <li>Implementar el código en Arduino que reciba las señales Bluetooth y controle dos LEDs.</li>
+            <li>Comprobar la comunicación inalámbrica entre el dispositivo móvil y el Arduino.</li>
+            <li>Analizar la importancia del control remoto de dispositivos mediante tecnologías inalámbricas.</li>
+        </ul>
+    </div>
+<h3>MARCO TEÓRICO</h3>
+<p><strong>Conceptos importantes</strong></p>
+<ul>
+        <li><strong>Arduino UNO:</strong> Placa de desarrollo basada en el microcontrolador ATmega328P, muy utilizada para proyectos de electrónica y programación.</li>
+        <li><strong>Módulo Bluetooth HC-05:</strong> Dispositivo que permite la comunicación inalámbrica entre Arduino y un teléfono u otro dispositivo Bluetooth mediante comunicación serial.</li>
+        <li><strong>Protoboard:</strong> Placa plástica con orificios que permite conectar componentes electrónicos sin necesidad de soldar.</li>
+        <li><strong>Programa Proteus:</strong> Software de simulación electrónica usado para diseñar y probar circuitos antes de implementarlos físicamente.</li>
+        <li><strong>Focos:</strong> Dispositivos eléctricos que convierten energía en luz, usados en proyectos de control de iluminación.</li>
+        <li><strong>Módulo Relé:</strong> Componente electrónico que actúa como interruptor controlado electrónicamente, permitiendo manejar cargas de mayor voltaje como focos o motores.</li>
+        <li><strong>Resistencia:</strong> Componente que limita el paso de corriente eléctrica para proteger otros dispositivos.</li>
+        <li><strong>Diodo LED:</strong> Dispositivo semiconductor que emite luz al paso de corriente en una sola dirección.</li>
+        <li><strong>Sensor:</strong> Dispositivo que detecta cambios en el entorno (temperatura, luz, movimiento, etc.) y envía esa información a Arduino.</li>
+        <li><strong>Fuente de Alimentación:</strong> Dispositivo que proporciona energía eléctrica estable para alimentar circuitos.</li>
+        <li><strong>App Inventor:</strong> Plataforma en línea de Google/MIT para crear aplicaciones móviles de manera visual y sencilla.</li>
+        <li><strong>Comunicación Serial:</strong> Método de transmisión de datos bit por bit entre dos dispositivos electrónicos (ej. Arduino y HC-05).</li>
+        <li><strong>Microcontrolador:</strong> Circuito integrado que ejecuta programas y controla dispositivos en sistemas electrónicos.</li>
+        <li><strong>Cable Jumper:</strong> Cables flexibles con conectores que permiten realizar conexiones rápidas en protoboard.</li>
+    </ul>
+<img src="https://controlautomaticoeducacion.com/wp-content/uploads/Bluetooth-conection_bb-scaled.jpg" width="800">
+
+<h3>Tabla explicativa de ventajas y desventajas de usar esta aplicación con el módulo bluetooth hc-05</h3>
+
+    <table>
+            <tr>
+                <th>Ventajas</th>
+                <th>Desventajas</th>
+            </tr>
+            <tr>
+                <td>Permite controlar dispositivos de forma inalámbrica.</td>
+                <td>Alcance limitado, generalmente hasta 10 metros.</td>
+            </tr>
+            <tr>
+                <td>Fácil integración con Arduino y aplicaciones móviles.</td>
+                <td>Requiere conocimientos básicos de programación y electrónica.</td>
+            </tr>
+            <tr>
+                <td>Proyecto de bajo costo y rápido de implementar.</td>
+                <td>Posibles interferencias con otros dispositivos Bluetooth.</td>
+            </tr>
+            <tr>
+                <td>Ideal para aprendizaje de domótica y automatización.</td>
+                <td>El módulo HC-05 no soporta múltiples conexiones simultáneas.</td>
+            </tr>
+        </table>
+<h2>Tabla del uso de materiales en la práctica</h2>
+         <table>
+            <tr>
+                <th>Concepto</th>
+                <th>Uso en la práctica</th>
+            </tr>
+            <tr>
+                <td>Arduino UNO</td>
+                <td>Controlar los LEDs según los comandos recibidos por Bluetooth.</td>
+            </tr>
+            <tr>
+                <td>Módulo Bluetooth HC-05</td>
+                <td>Recibir los comandos enviados desde la aplicación móvil.</td>
+            </tr>
+            <tr>
+                <td>Protoboard</td>
+                <td>Conectar los LEDs y otros componentes sin necesidad de soldadura.</td>
+            </tr>
+            <tr>
+                <td>Focos / LEDs</td>
+                <td>Se encienden y apagan según los comandos de la app.</td>
+            </tr>
+            <tr>
+                <td>Módulo Relé</td>
+                <td>Permite controlar focos de mayor voltaje con Arduino (opcional).</td>
+            </tr>
+            <tr>
+                <td>Cable Jumper</td>
+                <td>Realizar conexiones rápidas entre Arduino, LEDs y protoboard.</td>
+            </tr>
+        </table>
+<div class="materiales">
+        <h2>🔧 MATERIALES Y EQUIPO </h2>
+    <ul>
+            <li>Placa Arduino UNO</li>
+            <li>Módulo Bluetooth HC-05</li>
+            <li>Protoboard</li>
+            <li>2 LEDs (o focos pequeños)</li>
+            <li>Resistencias (220Ω para LEDs)</li>
+            <li>Módulo relé (si se usan focos de mayor voltaje)</li>
+            <li>Cables jumper</li>
+            <li>Fuente de alimentación 5V para Arduino</li>
+            <li>Teléfono móvil con la app desarrollada en App Inventor</li>
+            <li>Computadora con software Arduino IDE y App Inventor</li>
+       <li>focos de 110 voltios</li>
+       <li>modulo rele</li>
+        </ul>
+    </div>
+  <h3>PROCEDIMIENTO</h3>
+ <h1>Código usado en la práctica (IDE ARDUINO )</h1>
+<p>
+    <table border="1">
+// Pines usados para los focos (o relés)<br>
+int foco1 = 8;<br>
+int foco2 = 7;<br>
+<br>
+void setup() {<br>
+  // Iniciar comunicación con el HC-05<br>
+  Serial.begin(9600); // Velocidad por defecto del HC-05<br>
+<br>
+  // Configurar pines como salida<br>
+  pinMode(foco1, OUTPUT);<br>
+  pinMode(foco2, OUTPUT);<br>
+<br>
+  // Inicialmente apagados<br>
+  digitalWrite(foco1, LOW);<br>
+  digitalWrite(foco2, LOW);<br>
+}<br>
+<br>
+void loop() {<br>
+  // Verificar si llega un dato por Bluetooth<br>
+  if (Serial.available()) {<br>
+    char comando = Serial.read(); // Leer un carácter<br>
+<br>
+    if (comando == 'A') {<br>
+      digitalWrite(foco1, HIGH); // Encender foco 1<br>
+    }<br>
+    else if (comando == 'B') {<br>
+      digitalWrite(foco1, LOW);  // Apagar foco 1<br>
+    }<br>
+    else if (comando == 'C') {<br>
+      digitalWrite(foco2, HIGH); // Encender foco 2<br>
+    }<br>
+    else if (comando == 'D') {<br>
+      digitalWrite(foco2, LOW);  // Apagar foco 2<br>
+    }<br>
+  }<br>
+}<br>
+
+</table>
+
+</p>
+<h3>ANÁLISIS Y DISCUSIÓN</h3>
+  <h1>Preguntas y Respuestas de la práctica</h1>
+<div class="qa">
+            <p><strong>1. ¿Qué es el módulo HC-05?</strong><br>
+            Es un módulo Bluetooth que permite la comunicación inalámbrica entre Arduino y dispositivos móviles.</p>
+
+            <p><strong>2. ¿Qué tipo de comunicación utiliza el HC-05?</strong><br>
+            Utiliza comunicación serial (UART) para enviar y recibir datos.</p>
+
+            <p><strong>3. ¿Qué pines se utilizan en Arduino para conectar el HC-05?</strong><br>
+            Normalmente se conectan los pines TX y RX del módulo a los pines digitales 0 y 1 del Arduino UNO, o se pueden usar pines con SoftwareSerial.</p>
+
+            <p><strong>4. ¿Qué voltaje necesita el módulo HC-05?</strong><br>
+            El pin VCC funciona con 5V, pero sus pines de comunicación (TX/RX) trabajan con 3.3V lógicos.</p>
+
+            <p><strong>5. ¿Qué función cumple App Inventor en esta práctica?</strong><br>
+            Permite crear la aplicación móvil que envía comandos vía Bluetooth al Arduino.</p>
+
+            <p><strong>6. ¿Qué comandos se envían desde la app?</strong><br>
+            Se envían caracteres o cadenas simples como '1' o '2' para encender o apagar cada LED.</p>
+
+            <p><strong>7. ¿Cuál es la ventaja de controlar LEDs con Bluetooth?</strong><br>
+            Permite un control remoto inalámbrico, sin necesidad de cables físicos entre el móvil y Arduino.</p>
+
+            <p><strong>8. ¿Qué aplicación práctica tiene este proyecto?</strong><br>
+            Puede ser la base para desarrollar sistemas de domótica, control de luces y automatización de dispositivos.</p>
+
+            <p><strong>9. ¿Qué conocimientos se refuerzan con esta práctica?</strong><br>
+            Programación en Arduino, manejo de comunicación serial y diseño de apps móviles.</p>
+
+            <p><strong>10. ¿Qué mejoras se pueden implementar?</strong><br>
+            Se podría ampliar el sistema para controlar más dispositivos, agregar sensores o implementar seguridad en la conexión.</p>
+        </div>
+   
+    
+
+    <div class="seccion">
+        <h2> Conclusiones de la Práctica</h2>
+     <ul>
+            <li>El módulo Bluetooth HC-05 permite establecer una comunicación confiable entre un dispositivo móvil y un Arduino.</li>
+            <li>La integración entre App Inventor y Arduino facilita el diseño de aplicaciones prácticas y de bajo costo.</li>
+            <li>El uso de tecnologías inalámbricas es fundamental para el desarrollo de sistemas de automatización y domótica.</li>
+            <li>Esta práctica fortalece el aprendizaje de programación y electrónica aplicada.</li>
+        </ul>
+    </div>
+<h3>ANEXOS</h3>
+    <h2><strong> Capturas de pantalla del proyecto</strong> </h2>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/zXffRqN7/APP-INVENTOR-ESQUEMAS.png"width="800">
+        <figcaption>Figura 1: Esquemas generados para App Inventor y visualización al usuario</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/bY4zdk6y/app2.png"width="600">
+        <figcaption>Figura 2: Arduino IDE/código</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/qRd59BQd/app3.png"width="600">
+        <figcaption>Figura 3: Conexión de modulo bluetooth</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/QN7pFkXS/app4.png"width="600">
+        <figcaption>Figura 4: Conexión modulo rele para control de foco de 110 voltios de ac</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/ydMpF1gG/app5.png"width="600">
+        <figcaption>Figura 5: Prueba con la aplicación hecha en App Inventor</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/50rdDWH5/app6.png"width="600">
+        <figcaption>Figura 6: Prueba de encendido de módulo rele</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/T2yp1Rc6/app7.png"width="600">
+        <figcaption>Figura 7: Prueba de encendido de led </figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/TP8ZVJz0/app8.png"width="600">
+        <figcaption>Figura 8: Conexiónde foco a 110 voltios</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/sf0HPJSW/app9.png"width="600">
+        <figcaption>Figura 9: Todos los elementos conectados </figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/tTvk5X1b/app10.png"width="600">
+        <figcaption>Figura 10: funcionamiento correcto de todo el sistema</figcaption>
+        </figure>
+</div>
+    <h2><strong> Esquemas de conexión</strong></h2>
+  <h3>Esquemático de conexiones de la práctica en proteus 8 profesional</h3>
+    <img src="https://i.postimg.cc/rpMssMY8/ardu1.png"width="800">
+    <h3>Módulo bluetooth HC-05</h3>
+    <img src="https://i.postimg.cc/NG9HWG3V/ardu2.png"width="800">
+
+
+    <h2>Simulación en video del proyecto de encendido de 2 focos de 110 voltios con arduino y app inventor </h2>
+  
+    <a href="">Dar click aquí</a> 
+    <h2>Enlace de aplicación hecha en app Inventor </h2>
+  
+    <a href="https://ai2.appinventor.mit.edu/#5036210320900096">Dar click aquí</a> 
+</body>
+</html>
